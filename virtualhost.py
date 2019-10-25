@@ -24,7 +24,7 @@ print("ajustando la landing page")
 
 
 landing=open(directory+"/"+domain+"/index.html", "w")
-landing.write("<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Felicidades!</title><style>html{background-color: #508bc9;color: #fff;font-family: sans-serif, arial;}.container{width: 80%;margin: auto auto;}.inl{text-align: center;}.inl img{border-radius: 10px;}a{color: #f2d8ab;}</style></head><body><div class='container'><h1>Virtual Hosts creado exitosamente!</h1><br><br><h1>Let's celebrate!</h1><img src='http://i.imgur.com/vCbBhwy.gif' alt='Scene from Spider Man Movie (C) Spider Man Movie ..'></div></div></div></body></html>")
+landing.write("<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Felicidades!</title><style>html{background-color: #508bc9;color: #fff;font-family: sans-serif, arial;}.container{width: 80%;margin: auto auto;}.inl{text-align: center;}.inl img{border-radius: 10px;}a{color: #f2d8ab;}</style></head><body><div class='container'><h1>Virtual Hosts creado exitosamente!</h1><br><br><h1>A celebrar se ha dicho!</h1><img src='http://i.imgur.com/vCbBhwy.gif' alt='Scene from Spider Man Movie (C) Spider Man Movie ..'></div></div></div></body></html>")
 landing.close()
 
 
