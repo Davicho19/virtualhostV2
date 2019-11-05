@@ -6,12 +6,16 @@ os.system("clear")
 print("Ingrese el nombre de su domino")
 domain=input()
 
+print("ingrese el nombre de su carpeta")
+file=input()
+
+os.system("sudo mkdir /var/www/"+file)
 
 #print("Ingrese su direccion ip actual")
 #addip=input()
 
 #index="index.html"
-directory="/var/www/"
+directory="/var/www/"+file
 
 print("su domino sera almacenado en el siguiente directorio /var/www")
 os.system("sudo mkdir -p "+directory+"/"+domain)
@@ -21,7 +25,7 @@ os.system("sudo chmod -R 755 "+directory+domain)
 
 print("ajustando la landing page")
 
-
+ruta=directory+"/"+domain
 
 landing=open(directory+"/"+domain+"/index.html", "w")
 landing.write("<!DOCTYPE html><html lang='en'><head><meta charset='UTF-8'><title>Felicidades!</title><style>html{background-color: #508bc9;color: #fff;font-family: sans-serif, arial;}.container{width: 80%;margin: auto auto;}.inl{text-align: center;}.inl img{border-radius: 10px;}a{color: #f2d8ab;}</style></head><body><div class='container'><h1>Virtual Hosts creado exitosamente!</h1><br><br><h1>A celebrar se ha dicho!</h1><img src='http://i.imgur.com/vCbBhwy.gif' alt='Scene from Spider Man Movie (C) Spider Man Movie ..'></div></div></div></body></html>")
@@ -31,7 +35,7 @@ landing.close()
 
 #virtual host
 virtual=open("/etc/apache2/sites-available/"+domain+".conf", "w")
-virtual.write("<VirtualHost *:80>\nServerAdmin localserver@localhost\nServerName "+domain+"\nServerAlias www."+domain+"\nDocumentRoot "+directory+domain+"\nErrorLog ${APACHE_LOG_DIR}/error.log\nCustomLog ${APACHE_LOG_DIR}/access.log combined\n</VirtualHost>")
+virtual.write("<VirtualHost *:80>\nServerAdmin localserver@localhost\nServerName "+domain+"\nServerAlias www."+domain+"\nDocumentRoot "+ruta+"\nErrorLog ${APACHE_LOG_DIR}/error.log\nCustomLog ${APACHE_LOG_DIR}/access.log combined\n</VirtualHost>")
 virtual.close()
 
 print("Agregando su pagina inicio")
