@@ -21,7 +21,7 @@ print("su domino sera almacenado en el siguiente directorio /var/www")
 os.system("sudo mkdir -p "+directory+"/"+domain)
 
 print("Asignando permisos")
-os.system("sudo chmod -R 755 "+directory+domain)
+os.system("sudo chmod -R 755 "+directory+"/"+domain)
 
 print("ajustando la landing page")
 
