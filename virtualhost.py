@@ -39,6 +39,7 @@ virtual.write("<VirtualHost *:80>\nServerAdmin localserver@localhost\nServerName
 virtual.close()
 
 print("Agregando su pagina inicio")
+os.system("sudo a2dissite 000-default.conf")
 os.system("sudo a2ensite "+domain+".conf")
 
 print("Reiniciando apache2")
